@@ -1,0 +1,116 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+body{
+}
+
+.container{
+  margin: auto;
+  max-width: 90%;
+}
+
+.container p{
+  font-size: 35px;
+  letter-spacing: 2px;
+  margin: 20px 8px;
+}
+
+.container .box{
+  margin: 5px;
+  overflow: hidden;
+}
+
+.container .box label{
+  display: block;
+  padding: 10px 15px;
+  background: #DCDCDC;
+  cursor: pointer;
+  user-select: none;
+}
+
+.container .box label:hover{
+  background: #CCC;
+  transition: 0.4s;
+}
+
+.container .box .text{
+  border: 1px solid #DCDCDC;
+  padding: 20px 15px;
+}
+
+.container .box input{
+  visibility: hidden;
+  position: absolute;
+}
+
+.container .box input#kelompok1:checked ~ #kelompok1{
+  animation-name: expand;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.container .box input#kelompok2:checked ~ #kelompok2{
+  animation-name: expand;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.container .box input#kelompok3:checked ~ #kelompok3{
+  animation-name: expand;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.container .box input#kelompok1:not(:checked) ~ #kelompok1{
+  animation-name: collapse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.container .box input#kelompok2:not(:checked) ~ #kelompok2{
+  animation-name: collapse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.container .box input#kelompok3:not(:checked) ~ #kelompok3{
+  animation-name: collapse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes expand{
+  0% {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 0px;
+  }
+  100% {
+    padding-top: auto;
+    padding-bottom: auto;
+    height: auto;
+  }
+}
+
+@keyframes collapse{
+  0% {
+    border: 0px;
+  }
+  100% {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 0px;
+    border: 0px;
+  }
+}
+
+@media (max-width: 576px){
+  .container{
+    max-width: 100%;
+  }
+}
